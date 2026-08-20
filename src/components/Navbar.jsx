@@ -2,7 +2,7 @@ const links = [
   ["About me", "#about"],
   ["Projects", "#projects"],
   ["Tales", "#tales"],
-  ["Gallery", `${import.meta.env.BASE_URL}gallery`],
+  ["Gallery", "#gallery"],
   ["Contact", "#contact"],
 ];
 
