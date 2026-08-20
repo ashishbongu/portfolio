@@ -1,5 +1,5 @@
 const photoModules = import.meta.glob(
-  ["../assets/galPhotos/*.{png,jpg,jpeg,webp,avif}", "!../assets/galPhotos/1.png"],
+  "../assets/galPhotosOptimized/*.jpg",
   {
     eager: true,
     import: "default",
@@ -28,7 +28,7 @@ export default function GalleryPage() {
         </div>
 
         <div className="mt-14 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
-          {photos.map((photo) => (
+          {photos.map((photo, index) => (
             <figure
               key={photo.src}
               className="overflow-hidden bg-neutral-900 transition duration-500 ease-out hover:-translate-y-2 hover:rotate-2 hover:scale-[1.02]"
@@ -36,6 +36,9 @@ export default function GalleryPage() {
               <img
                 src={photo.src}
                 alt={photo.alt}
+                loading={index < 3 ? "eager" : "lazy"}
+                decoding="async"
+                fetchPriority={index === 0 ? "high" : "auto"}
                 className="block h-auto w-full"
               />
             </figure>
