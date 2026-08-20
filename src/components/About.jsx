@@ -34,6 +34,7 @@ export default function About() {
             text-neutral-400
             text-lg
             leading-8
+            text-justify
             max-w-3xl"
           >
             Hey! I'm Ashish. You can call me Snaparos. Hmm... never mind, call me Ashish only.
