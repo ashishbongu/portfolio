@@ -10,3 +10,18 @@ body {
   color: white;
   font-family: Inter, sans-serif;
 }
+
+@import "tailwindcss";
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:black;
+    color:white;
+}
+
+.instrument-serif{
+  font-family: "Instrument Serif", serif;
+}
