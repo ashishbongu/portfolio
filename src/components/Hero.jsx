@@ -2,7 +2,7 @@ import heroVideo from "../assets/hero.mp4";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden">
+    <section id="home" className="relative min-h-screen bg-black overflow-hidden">
 
       <div className="max-w-7xl mx-auto h-screen px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center">
 

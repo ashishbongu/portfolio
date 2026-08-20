@@ -2,29 +2,47 @@ import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
-import Tales from "./components/Tales";
+import TalesPage from "./components/Tales";
 import GalleryPage from "./components/Gallery";
 
 function App() {
-  const [isGallery, setIsGallery] = useState(() => window.location.hash === "#gallery");
+  const [page, setPage] = useState(() => {
+    const hash = window.location.hash;
+    return hash === "#gallery" || hash === "#tales" ? hash.slice(1) : "home";
+  });
 
   useEffect(() => {
-    const updateView = () => setIsGallery(window.location.hash === "#gallery");
+    const updateView = () => {
+      const hash = window.location.hash;
+      setPage(hash === "#gallery" || hash === "#tales" ? hash.slice(1) : "home");
+    };
 
     window.addEventListener("hashchange", updateView);
     return () => window.removeEventListener("hashchange", updateView);
   }, []);
 
-  if (isGallery) {
-    return <GalleryPage />;
-  }
+  useEffect(() => {
+    if (page !== "home") return;
+
+    const hash = window.location.hash;
+    if (!hash) return;
+
+    document.querySelector(hash)?.scrollIntoView();
+  }, [page]);
 
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Tales />
+      {page === "gallery" ? (
+        <GalleryPage />
+      ) : page === "tales" ? (
+        <TalesPage />
+      ) : (
+        <>
+          <Hero />
+          <About />
+        </>
+      )}
     </>
   );
 }

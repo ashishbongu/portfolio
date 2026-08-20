@@ -1,8 +1,10 @@
+import taleThumbnail from "../assets/Black White and Red Typographic Truth YouTube Thumbnail.png";
+
 const videos = [
   {
     title: "Conversation with Mathew Bentley | Tale 1",
     duration: "21:27",
-    image: "src/assets/Black White and Red Typographic Truth YouTube Thumbnail.png",
+    image: taleThumbnail,
   },
   {
     title: "A student developer's day",
@@ -18,7 +20,7 @@ const videos = [
 
 export default function Tales() {
   return (
-    <section id="tales" className="bg-black px-6 py-24 lg:px-12 lg:py-32">
+    <main id="tales" className="min-h-screen bg-black px-6 pb-24 pt-32 lg:px-12 lg:pb-32 lg:pt-40">
       <div className="mx-auto max-w-7xl">
         <p className="uppercase tracking-[8px] text-neutral-500">Tales</p>
         <div className="mt-8 flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
@@ -53,6 +55,6 @@ export default function Tales() {
           ))}
         </div>
       </div>
-    </section>
+    </main>
   );
 }
