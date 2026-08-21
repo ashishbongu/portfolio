@@ -19,21 +19,21 @@ export default function Hero() {
 
           <h1 className="instrument-serif text-white font-normal tracking-wide
                          text-6xl sm:text-5xl md:text-6xl lg:text-7xl">
-            BONGU <span className="italic text-[#4D6CFA]">ASHISH</span>
+            B <span className="italic text-[#4D6CFA]">ASHISH</span>
           </h1>
 
           <p className="mt-3 text-xs font-medium uppercase tracking-[0.28em] text-neutral-400 sm:text-sm">
             Content Creator <span className="mx-1 text-neutral-600">|</span> Dharwad, India
           </p>
 
-          <p className="mt-5 max-w-xl text-base leading-7 text-neutral-300 sm:text-lg">
+          {/* <p className="mt-5 max-w-xl text-base leading-7 text-neutral-300 sm:text-lg">
             <span className="font-semibold text-white">Niche:</span> Photography, Travelling,
             Storytelling, Poetry, Writing
-          </p>
+          </p> */}
 
-          <div className="mt-7 flex flex-col items-center gap-3 lg:items-start">
+          <div className="mt-3 flex flex-col items-center gap-3 lg:items-start">
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm lg:justify-start">
-              <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow me on Instagram</span>
+              <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow me on</span>
               <a href="https://www.instagram.com/snaparos/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
                 @snaparos
               </a>
