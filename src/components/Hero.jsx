@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="mx-auto flex h-screen max-w-7xl flex-col items-center px-6 lg:flex-row lg:px-12">
 
         {/* LEFT */}
-        <div className="z-10 flex w-full flex-[0.8] flex-col justify-center pb-4 pt-24 text-center lg:w-auto lg:flex-1 lg:justify-center lg:pb-0 lg:pt-0 lg:text-left">
+        <div className="z-10 flex w-full flex-[0.8] -translate-y-5 flex-col justify-center pb-4 pt-24 text-center lg:w-auto lg:flex-1 lg:translate-y-0 lg:justify-center lg:pb-0 lg:pt-0 lg:text-left">
 
           <h1 className="instrument-serif text-white font-normal tracking-wide
                          text-5xl sm:text-5xl md:text-6xl lg:text-7xl">
