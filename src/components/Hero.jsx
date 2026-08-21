@@ -12,13 +12,13 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden">
 
-      <div className="max-w-7xl mx-auto h-screen px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center">
+      <div className="mx-auto flex h-screen max-w-7xl flex-col items-center px-6 lg:flex-row lg:px-12">
 
         {/* LEFT */}
-        <div className="flex-1 text-center lg:text-left z-10 pb-10 lg:pb-0">
+        <div className="z-10 flex w-full flex-1 flex-col justify-center pb-4 pt-24 text-center lg:w-auto lg:justify-center lg:pb-0 lg:pt-0 lg:text-left">
 
           <h1 className="instrument-serif text-white font-normal tracking-wide
-                         text-6xl sm:text-5xl md:text-6xl lg:text-7xl">
+                         text-4xl sm:text-5xl md:text-6xl lg:text-7xl">
             B <span className="italic text-[#4D6CFA]">ASHISH</span>
           </h1>
 
@@ -56,9 +56,9 @@ export default function Hero() {
         </div>
 
         {/* RIGHT */}
-        <div className="flex-1 flex justify-center lg:justify-end items-end h-full">
+        <div className="flex w-full min-h-0 flex-1 items-end justify-end lg:h-full lg:flex-1">
 
-          <div className="w-[280px] sm:w-[340px] md:w-[420px] lg:w-[520px]">
+          <div className="w-[min(110vw,520px)] max-w-none translate-x-6 sm:w-[min(100vw,520px)] lg:w-[520px] lg:translate-x-0">
 
             <video
               autoPlay
