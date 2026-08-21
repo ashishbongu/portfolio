@@ -1,5 +1,6 @@
 import { useState } from "react";
 import heroVideo from "../assets/hero.mp4";
+import mobileBanner from "../assets/galPhotosOptimized/image.png";
 
 function MailIcon() {
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>;
@@ -23,6 +24,10 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden">
+
+      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[5.5rem] z-10 h-32 w-[calc(100%-3rem)] max-w-sm -translate-x-1/2 overflow-hidden rounded-2xl border border-white/20 md:hidden">
+        <img src={mobileBanner} alt="" className="h-full w-full object-cover object-center" />
+      </div>
 
       <div className="mx-auto flex h-screen max-w-7xl flex-col items-center px-6 lg:flex-row lg:px-12">
 
@@ -56,7 +61,7 @@ export default function Hero() {
             </div>
 
             <div className="mt-2 flex items-center gap-3">
-              <a href="mailto:bonguashish532222@gmail.com?subject=Portfolio%20enquiry" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA]">
+              <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bonguashish532222@gmail.com&su=Portfolio%20enquiry" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA]">
                 <MailIcon /> Email me
               </a>
               <a href="tel:+919849969068" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA]">
