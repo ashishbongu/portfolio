@@ -1,3 +1,4 @@
+import { useState } from "react";
 import heroVideo from "../assets/hero.mp4";
 
 function MailIcon() {
@@ -8,7 +9,18 @@ function PhoneIcon() {
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><path d="M6.6 3.8 9.1 3c.7-.2 1.4.2 1.6.9l1.1 3.2c.2.6 0 1.2-.5 1.5l-1.6 1a13.7 13.7 0 0 0 4.7 4.7l1-1.6c.3-.5.9-.7 1.5-.5l3.2 1.1c.7.2 1.1.9.9 1.6l-.8 2.5c-.3.9-1.1 1.5-2 1.4C10.2 18.2 5.8 13.8 5.2 5.8c-.1-.9.5-1.7 1.4-2Z" /></svg>;
 }
 
+const storyPoints = [
+  { text: "I love telling stories just the way my mother used to", position: "top-[19%]" },
+  { text: "I love capturing moments just the way it is ", position: "top-[31%]" },
+  { text: "I love travelling to places that remind me of who I am.", position: "top-[43%]" },
+  { text: "I love writing poems just the way i dream.", position: "top-[55%]" },
+  { text: "I love designing things just the way you desire.", position: "top-[67%]" },
+  { text: "And I love creating Art which Ai can never ******.", position: "top-[79%]" },
+];
+
 export default function Hero() {
+  const [skillsVisible, setSkillsVisible] = useState(false);
+
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden">
 
@@ -50,6 +62,16 @@ export default function Hero() {
               <a href="tel:+919849969068" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA]">
                 <PhoneIcon /> Call me
               </a>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={skillsVisible}
+                aria-label="Show creative disciplines"
+                onClick={() => setSkillsVisible((visible) => !visible)}
+                className={`group relative inline-flex h-10 w-[3.25rem] shrink-0 items-center rounded-full border p-1 transition-colors duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4D6CFA] ${skillsVisible ? "border-[#4D6CFA] bg-[#4D6CFA]" : "border-white/25 bg-white/5 hover:border-white/50"}`}
+              >
+                <span aria-hidden="true" className={`h-7 w-7 rounded-full bg-white shadow-sm transition-transform duration-300 ${skillsVisible ? "translate-x-[0.85rem]" : "translate-x-0"}`} />
+              </button>
             </div>
           </div>
 
@@ -65,7 +87,7 @@ export default function Hero() {
               loop
               muted
               playsInline
-              className="w-full h-auto pointer-events-none select-none"
+              className={`h-auto w-full pointer-events-none select-none transition-[filter] duration-700 ${skillsVisible ? "grayscale" : "grayscale-0"}`}
             >
               <source src={heroVideo} type="video/mp4" />
             </video>
@@ -73,6 +95,21 @@ export default function Hero() {
           </div>
 
         </div>
+
+        {/* Desktop-only notes that use the open space beside the portrait. */}
+        <aside aria-label="Creative disciplines" className="pointer-events-none absolute inset-y-0 left-[calc(50%+145px)] hidden w-[min(19vw,280px)] xl:block">
+          {skillsVisible && storyPoints.map(({ text, position }, index) => (
+            <div
+              key={text}
+              className={`absolute ${position} left-0 animate-[fade-in_450ms_ease-out_both]`}
+              style={{ animationDelay: `${index * 180}ms` }}
+            >
+              <span className="relative inline-block whitespace-nowrap pb-2 text-left text-[10px] font-semibold uppercase tracking-[0.12em] text-white/85 after:absolute after:bottom-0 after:left-0 after:h-px after:w-14 after:bg-white/75">
+                {text}
+              </span>
+            </div>
+          ))}
+        </aside>
 
       </div>
 

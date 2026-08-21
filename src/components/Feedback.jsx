@@ -1,4 +1,5 @@
 import { useState } from "react";
+import feedbackBackground from "../assets/services-background.png";
 
 export default function Feedback() {
   const [type, setType] = useState("Query");
@@ -37,30 +38,32 @@ export default function Feedback() {
   return (
     <section className="bg-[#111111] px-6 py-20 text-white sm:py-24 lg:px-12 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-center lg:gap-24">
-        <form onSubmit={handleSubmit} className="order-2 rounded-2xl bg-white p-6 text-black shadow-2xl sm:p-8 lg:order-1">
-          <div className="inline-flex rounded-full border border-black/15 p-1" role="group" aria-label="Feedback type">
+        <form onSubmit={handleSubmit} className="relative isolate order-2 overflow-hidden rounded-2xl bg-black p-6 text-neutral-300 shadow-2xl shadow-black/40 sm:p-8 lg:order-1">
+          <img src={feedbackBackground} alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 h-full w-full scale-110 object-cover object-right-bottom opacity-20 animate-[form-background-drift_18s_ease-in-out_infinite_alternate]" />
+          <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-[1] bg-black/65" />
+          <div className="relative z-10 inline-flex rounded-full border border-white/15 p-1" role="group" aria-label="Feedback type">
             {["Query", "Review"].map((option) => (
               <button
                 key={option}
                 type="button"
                 onClick={() => setType(option)}
                 aria-pressed={type === option}
-                className={`rounded-full px-5 py-2 text-sm font-medium transition ${type === option ? "bg-black text-white" : "text-neutral-500 hover:text-black"}`}
+                className={`rounded-full px-5 py-2 text-sm font-medium transition ${type === option ? "bg-white/15 text-neutral-100" : "text-neutral-500 hover:text-neutral-200"}`}
               >
                 {option}
               </button>
             ))}
           </div>
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            <label className="text-sm font-medium">
+          <div className="relative z-10 mt-8 grid gap-6 sm:grid-cols-2">
+            <label className="text-sm font-medium sm:col-span-2">
               Your name
               <input
                 name="name"
                 type="text"
                 required
                 placeholder="Enter your name"
-                className="mt-2 w-full border-b border-black/25 bg-transparent px-0 py-3 text-base font-normal outline-none placeholder:text-neutral-400 focus:border-[#4D6CFA]"
+                className="mt-2 w-full rounded-lg border border-white/20 bg-white/[0.03] px-4 py-3 text-base font-normal text-neutral-200 outline-none placeholder:text-neutral-600 transition focus:border-[#4D6CFA]"
               />
             </label>
             <label className="text-sm font-medium sm:col-span-2">
@@ -70,15 +73,15 @@ export default function Feedback() {
                 required
                 rows="4"
                 placeholder={type === "Query" ? "What would you like to ask?" : "Tell me about your experience..."}
-                className="mt-2 w-full resize-y border-b border-black/25 bg-transparent px-0 py-3 text-base font-normal outline-none placeholder:text-neutral-400 focus:border-[#4D6CFA]"
+                className="mt-2 w-full resize-y rounded-lg border border-white/20 bg-white/[0.03] px-4 py-3 text-base font-normal text-neutral-200 outline-none placeholder:text-neutral-600 transition focus:border-[#4D6CFA]"
               />
             </label>
           </div>
 
-          <button type="submit" className="mt-8 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4D6CFA]">
+          <button type="submit" className="relative z-10 mt-8 rounded-full bg-neutral-200 px-6 py-3 text-sm font-semibold text-black transition hover:bg-[#4D6CFA] hover:text-white">
             Send {type.toLowerCase()}
           </button>
-          {status && <p className="mt-4 text-sm text-neutral-500" role="status">{status}</p>}
+          {status && <p className="relative z-10 mt-4 text-sm text-neutral-400" role="status">{status}</p>}
         </form>
 
         <div className="order-1 lg:order-2">

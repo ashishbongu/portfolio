@@ -53,7 +53,7 @@ export default function Services() {
         </p>
         <div className="mt-5 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <h2 className="instrument-serif max-w-2xl text-5xl leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
-            Made with a point of <span className="italic text-[#4D6CFA]">view.</span>
+           How can I help <span className="italic text-[#4D6CFA]">you ?</span>
           </h2>
           <p className="max-w-sm text-sm leading-6 text-neutral-400 md:text-right">
             I shape ideas that people can connect with.
@@ -64,13 +64,13 @@ export default function Services() {
           {services.map((service) => (
             <article
               key={service.number}
-              className="group relative min-h-56 overflow-hidden border border-white/15 p-6 transition-all duration-300 ease-out hover:-translate-y-2 hover:rotate-[1.25deg] hover:border-[#4D6CFA] hover:bg-[#4D6CFA] sm:p-7"
+              className="group relative min-h-56 overflow-hidden border border-white/15 p-6 transition-all duration-300 ease-out hover:rotate-[1.25deg] hover:border-white hover:ring-2 hover:ring-white sm:p-7"
             >
               <img
                 src={service.image}
                 alt=""
                 loading="lazy"
-                className="absolute inset-0 h-full w-full scale-110 object-cover opacity-25 transition duration-500 group-hover:scale-100 group-hover:opacity-15"
+                className="absolute inset-0 h-full w-full scale-110 object-cover opacity-55 brightness-120 transition duration-500 group-hover:scale-100 group-hover:opacity-70 group-hover:brightness-130"
                 style={{ objectPosition: "70% 70%" }}
               />
               <div className="relative z-10">

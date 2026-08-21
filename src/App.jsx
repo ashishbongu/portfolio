@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import TalesPage from "./components/Tales";
 import GalleryPage from "./components/Gallery";
 import Feedback from "./components/Feedback";
+import Footer from "./components/Footer";
 
 const Services = lazy(() => import("./components/Services"));
 
@@ -48,6 +49,7 @@ function App() {
             <Services />
           </Suspense>
           <Feedback />
+          <Footer />
         </>
       )}
     </>
