@@ -17,10 +17,14 @@ export default function Hero() {
         {/* LEFT */}
         <div className="flex-1 text-center lg:text-left z-10 pb-10 lg:pb-0">
 
-          <h1 className="text-white font-black tracking-tight
-                         text-5xl sm:text-4xl md:text-5xl lg:text-6xl">
-            B ASHISH
+          <h1 className="instrument-serif text-white font-normal tracking-wide
+                         text-6xl sm:text-5xl md:text-6xl lg:text-7xl">
+            BONGU <span className="italic text-[#4D6CFA]">ASHISH</span>
           </h1>
+
+          <p className="mt-3 text-xs font-medium uppercase tracking-[0.28em] text-neutral-400 sm:text-sm">
+            Content Creator <span className="mx-1 text-neutral-600">|</span> Dharwad, India
+          </p>
 
           <p className="mt-5 max-w-xl text-base leading-7 text-neutral-300 sm:text-lg">
             <span className="font-semibold text-white">Niche:</span> Photography, Travelling,
@@ -29,13 +33,13 @@ export default function Hero() {
 
           <div className="mt-7 flex flex-col items-center gap-3 lg:items-start">
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm lg:justify-start">
-              <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow us</span>
+              <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow me on Instagram</span>
               <a href="https://www.instagram.com/snaparos/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
                 @snaparos
               </a>
               <span className="text-neutral-600">/</span>
-              <a href="https://www.instagram.com/tales/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
-                @tales
+              <a href="https://www.instagram.com/taleswrap/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
+                @taleswrap
               </a>
             </div>
 
