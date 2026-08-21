@@ -4,6 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TalesPage from "./components/Tales";
 import GalleryPage from "./components/Gallery";
+import Feedback from "./components/Feedback";
 
 const Services = lazy(() => import("./components/Services"));
 
@@ -46,6 +47,7 @@ function App() {
           <Suspense fallback={<div className="min-h-24 bg-black" aria-label="Loading services" />}>
             <Services />
           </Suspense>
+          <Feedback />
         </>
       )}
     </>
