@@ -44,7 +44,7 @@ export default function Hero() {
             </div>
 
             <div className="mt-2 flex items-center gap-3">
-              <a href="mailto:bonguashish532222@gmail.com?subject=Portfolio%20enquiry" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#4D6CFA] hover:text-white">
+              <a href="mailto:bonguashish532222@gmail.com?subject=Portfolio%20enquiry" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA]">
                 <MailIcon /> Email me
               </a>
               <a href="tel:+919849969068" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA]">
