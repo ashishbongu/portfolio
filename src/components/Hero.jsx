@@ -56,9 +56,9 @@ export default function Hero() {
         </div>
 
         {/* RIGHT */}
-        <div className="flex w-full min-h-0 flex-[1.4] items-center justify-center lg:h-full lg:flex-1 lg:items-end lg:justify-end">
+        <div className="absolute inset-x-0 bottom-0 flex w-full items-end justify-center lg:static lg:h-full lg:flex-1 lg:justify-end">
 
-          <div className="w-[min(190vw,900px)] max-w-none -translate-y-28 sm:w-[min(170vw,820px)] sm:-translate-y-24 lg:w-[520px] lg:translate-x-0 lg:translate-y-0">
+          <div className="w-[min(190vw,900px)] max-w-none sm:w-[min(170vw,820px)] lg:w-[520px]">
 
             <video
               autoPlay
