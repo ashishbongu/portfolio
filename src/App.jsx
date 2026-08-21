@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense, useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TalesPage from "./components/Tales";
 import GalleryPage from "./components/Gallery";
+
+const Services = lazy(() => import("./components/Services"));
 
 function App() {
   const [page, setPage] = useState(() => {
@@ -41,6 +43,9 @@ function App() {
         <>
           <Hero />
           <About />
+          <Suspense fallback={<div className="min-h-24 bg-black" aria-label="Loading services" />}>
+            <Services />
+          </Suspense>
         </>
       )}
     </>

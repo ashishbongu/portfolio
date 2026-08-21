@@ -1,5 +1,13 @@
 import heroVideo from "../assets/hero.mp4";
 
+function MailIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>;
+}
+
+function PhoneIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><path d="M6.6 3.8 9.1 3c.7-.2 1.4.2 1.6.9l1.1 3.2c.2.6 0 1.2-.5 1.5l-1.6 1a13.7 13.7 0 0 0 4.7 4.7l1-1.6c.3-.5.9-.7 1.5-.5l3.2 1.1c.7.2 1.1.9.9 1.6l-.8 2.5c-.3.9-1.1 1.5-2 1.4C10.2 18.2 5.8 13.8 5.2 5.8c-.1-.9.5-1.7 1.4-2Z" /></svg>;
+}
+
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden">
@@ -14,29 +22,32 @@ export default function Hero() {
             B ASHISH
           </h1>
 
-          <p className="mt-5 text-neutral-400 max-w-xl text-base sm:text-lg">
-            Full Stack Developer • AI/ML Enthusiast • Content Creator
-            <br />
-            Student at Indian Institute of Information Technology, Dharwad
+          <p className="mt-5 max-w-xl text-base leading-7 text-neutral-300 sm:text-lg">
+            <span className="font-semibold text-white">Niche:</span> Photography, Travelling,
+            Storytelling, Poetry, Writing
           </p>
 
-          <button
-            className="
-            mt-6
-            px-8
-            py-4
-            rounded-full
-            bg-black
-            text-white
-            border
-            font-semibold
-            hover:text-black
-            hover:bg-white
-            transition
-            duration-300"
-          >
-            Know My Story
-          </button>
+          <div className="mt-7 flex flex-col items-center gap-3 lg:items-start">
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm lg:justify-start">
+              <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow us</span>
+              <a href="https://www.instagram.com/snaparos/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
+                @snaparos
+              </a>
+              <span className="text-neutral-600">/</span>
+              <a href="https://www.instagram.com/tales/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
+                @tales
+              </a>
+            </div>
+
+            <div className="mt-2 flex items-center gap-3">
+              <a href="mailto:bonguashish532222@gmail.com?subject=Portfolio%20enquiry" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition hover:bg-[#4D6CFA] hover:text-white">
+                <MailIcon /> Email me
+              </a>
+              <a href="tel:+919849969068" className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA]">
+                <PhoneIcon /> Call me
+              </a>
+            </div>
+          </div>
 
         </div>
 
