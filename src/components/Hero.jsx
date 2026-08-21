@@ -58,7 +58,7 @@ export default function Hero() {
         {/* RIGHT */}
         <div className="flex w-full min-h-0 flex-1 items-center justify-center lg:h-full lg:flex-1 lg:items-end lg:justify-end">
 
-          <div className="w-[min(125vw,600px)] max-w-none -translate-y-4 sm:w-[min(115vw,560px)] lg:w-[520px] lg:translate-x-0 lg:translate-y-0">
+          <div className="w-[min(145vw,700px)] max-w-none -translate-y-4 sm:w-[min(130vw,650px)] lg:w-[520px] lg:translate-x-0 lg:translate-y-0">
 
             <video
               autoPlay
