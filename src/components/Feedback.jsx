@@ -2,28 +2,42 @@ import { useState } from "react";
 
 export default function Feedback() {
   const [type, setType] = useState("Query");
+  const [status, setStatus] = useState("");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const name = form.get("name");
     const experience = form.get("experience");
     const subject = `${type} from ${name}`;
     const body = `Name: ${name}\n\n${type}:\n${experience}`;
-    window.location.href = `mailto:bonguashish532222@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    setStatus("Sending…");
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/bonguashish532222@gmail.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new URLSearchParams({
+          name: String(name),
+          message: String(experience),
+          _subject: subject,
+          _captcha: "false",
+        }),
+      });
+
+      if (!response.ok) throw new Error("Unable to send");
+      setStatus("Thanks — your message was sent.");
+      event.currentTarget.reset();
+    } catch {
+      setStatus("Opening your email app…");
+      window.location.href = `mailto:bonguashish532222@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
   }
 
   return (
-    <section className="bg-white px-6 py-20 text-black sm:py-24 lg:px-12 lg:py-28">
-      <div className="mx-auto max-w-3xl">
-        <p className="text-xs font-medium uppercase tracking-[0.3em] text-neutral-500">
-          Let’s connect
-        </p>
-        <h2 className="instrument-serif mt-5 text-5xl leading-[0.95] tracking-tight sm:text-6xl">
-          Have something to <span className="italic text-[#4D6CFA]">say?</span>
-        </h2>
-
-        <form onSubmit={handleSubmit} className="mt-10">
+    <section className="bg-[#111111] px-6 py-20 text-white sm:py-24 lg:px-12 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-center lg:gap-24">
+        <form onSubmit={handleSubmit} className="order-2 rounded-2xl bg-white p-6 text-black shadow-2xl sm:p-8 lg:order-1">
           <div className="inline-flex rounded-full border border-black/15 p-1" role="group" aria-label="Feedback type">
             {["Query", "Review"].map((option) => (
               <button
@@ -50,7 +64,7 @@ export default function Feedback() {
               />
             </label>
             <label className="text-sm font-medium sm:col-span-2">
-              Your experience
+              {type === "Query" ? "Your query" : "Your review"}
               <textarea
                 name="experience"
                 required
@@ -64,7 +78,20 @@ export default function Feedback() {
           <button type="submit" className="mt-8 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#4D6CFA]">
             Send {type.toLowerCase()}
           </button>
+          {status && <p className="mt-4 text-sm text-neutral-500" role="status">{status}</p>}
         </form>
+
+        <div className="order-1 lg:order-2">
+          <p className="text-xs font-medium uppercase tracking-[0.3em] text-neutral-500">
+            Let’s connect
+          </p>
+          <h2 className="instrument-serif mt-5 text-5xl leading-[0.95] tracking-tight sm:text-6xl">
+            Have something to <span className="italic text-[#4D6CFA]">say?</span>
+          </h2>
+          <p className="mt-6 max-w-sm text-sm leading-6 text-neutral-400">
+            Ask a question, share a thought (not personals okay...).
+          </p>
+        </div>
       </div>
     </section>
   );
