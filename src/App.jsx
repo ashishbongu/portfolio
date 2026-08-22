@@ -27,7 +27,10 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (page !== "home") return;
+    if (page !== "home") {
+      window.scrollTo({ top: 0, behavior: "auto" });
+      return;
+    }
 
     const hash = window.location.hash;
     if (!hash) return;

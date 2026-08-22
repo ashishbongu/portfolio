@@ -70,6 +70,7 @@ export default function Services() {
             <Card
               key={service.number}
               {...(service.href ? { href: service.href } : {})}
+              {...(service.href ? { onClick: (event) => { event.preventDefault(); window.location.hash = service.href.slice(1); } } : {})}
               className="group relative block min-h-56 overflow-hidden border border-white/15 p-6 transition duration-300 ease-out hover:-translate-y-1 hover:rotate-[1deg] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4D6CFA] sm:p-7"
             >
               <img
