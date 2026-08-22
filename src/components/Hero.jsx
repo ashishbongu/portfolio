@@ -35,6 +35,16 @@ export default function Hero() {
         )}
       </div>
 
+      <a
+        href="#about"
+        aria-label="Scroll to about section"
+        className="absolute bottom-5 left-1/2 z-20 inline-flex -translate-x-1/2 animate-bounce rounded-full border border-white/25 bg-black/25 p-2 text-white/85 backdrop-blur-sm transition hover:border-white/60 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4D6CFA]"
+      >
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4">
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </a>
+
       <div className="mx-auto flex h-screen max-w-7xl flex-col items-center px-6 lg:flex-row lg:px-12">
 
         {/* LEFT */}
@@ -57,13 +67,15 @@ export default function Hero() {
           <div className="mt-3 flex flex-col items-center gap-3 lg:items-start">
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm lg:justify-start">
               <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow me on</span>
-              <a href="https://www.instagram.com/snaparos/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
-                @snaparos
-              </a>
-              <span className="text-neutral-600">/</span>
+
               <a href="https://www.instagram.com/taleswrap/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
                 @taleswrap
               </a>
+              <span className="text-neutral-600">/</span>
+              <a href="https://www.instagram.com/snaparos/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
+                @snaparos
+              </a>
+
             </div>
 
             <div className="mt-2 flex items-center gap-3">

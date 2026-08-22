@@ -10,6 +10,7 @@ const services = [
     number: "01",
     title: "Photography",
     image: photographyBackground,
+    href: "#gallery",
     description: "Thoughtful portraits, lifestyle frames, and visuals that hold a moment for longer.",
   },
   {
@@ -40,6 +41,7 @@ const services = [
     number: "06",
     title: "Poetry & Writing",
     image: writingBackground,
+    href: "#poem-desk",
     description: "Words with feeling—from intimate reflections to captions that leave a small echo.",
   },
 ];
@@ -61,16 +63,20 @@ export default function Services() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <article
+          {services.map((service) => {
+            const Card = service.href ? "a" : "article";
+
+            return (
+            <Card
               key={service.number}
-              className="group relative min-h-56 overflow-hidden border border-white/15 p-6 transition-all duration-300 ease-out hover:rotate-[1.25deg] hover:border-white hover:ring-2 hover:ring-white sm:p-7"
+              {...(service.href ? { href: service.href } : {})}
+              className="group relative block min-h-56 overflow-hidden border border-white/15 p-6 transition duration-300 ease-out hover:-translate-y-1 hover:rotate-[1deg] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#4D6CFA] sm:p-7"
             >
               <img
                 src={service.image}
                 alt=""
                 loading="lazy"
-                className="absolute inset-0 h-full w-full scale-110 object-cover opacity-55 brightness-120 transition duration-500 group-hover:scale-100 group-hover:opacity-70 group-hover:brightness-130"
+                className="absolute inset-0 h-full w-full object-cover opacity-55 brightness-110 transition duration-500 group-hover:scale-105 group-hover:opacity-65"
                 style={{ objectPosition: "70% 70%" }}
               />
               <div className="relative z-10">
@@ -84,8 +90,9 @@ export default function Services() {
                   {service.description}
                 </p>
               </div>
-            </article>
-          ))}
+            </Card>
+            );
+          })}
         </div>
       </div>
     </section>

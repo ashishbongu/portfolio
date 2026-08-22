@@ -6,19 +6,20 @@ import TalesPage from "./components/Tales";
 import GalleryPage from "./components/Gallery";
 import Feedback from "./components/Feedback";
 import Footer from "./components/Footer";
+import PoemDesk from "./components/PoemDesk";
 
 const Services = lazy(() => import("./components/Services"));
 
 function App() {
   const [page, setPage] = useState(() => {
     const hash = window.location.hash;
-    return hash === "#gallery" || hash === "#tales" ? hash.slice(1) : "home";
+    return hash === "#gallery" || hash === "#tales" || hash === "#poem-desk" ? hash.slice(1) : "home";
   });
 
   useEffect(() => {
     const updateView = () => {
       const hash = window.location.hash;
-      setPage(hash === "#gallery" || hash === "#tales" ? hash.slice(1) : "home");
+      setPage(hash === "#gallery" || hash === "#tales" || hash === "#poem-desk" ? hash.slice(1) : "home");
     };
 
     window.addEventListener("hashchange", updateView);
@@ -41,6 +42,8 @@ function App() {
         <GalleryPage />
       ) : page === "tales" ? (
         <TalesPage />
+      ) : page === "poem-desk" ? (
+        <PoemDesk />
       ) : (
         <>
           <Hero />

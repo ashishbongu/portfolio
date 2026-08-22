@@ -3,6 +3,7 @@ const links = [
   ["About me", "#about"],
   ["Tales", "#tales"],
   ["Gallery", "#gallery"],
+  ["Poem Desk", "#poem-desk"],
   ["Contact", "#contact"],
 ];
 
