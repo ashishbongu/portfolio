@@ -59,6 +59,34 @@ export default function Tales() {
             </p>
           </article>
         </div>
+
+        <div className="mt-14 flex flex-col items-center justify-center gap-3 text-center sm:flex-row sm:gap-4">
+        <p className="text-sm text-neutral-400">Explore more on</p>
+          <a
+            href="https://www.instagram.com/taleswrap/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4D6CFA]"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="mr-2 h-4 w-4">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <path d="M17.5 6.5h.01" strokeWidth="2.5" strokeLinecap="round" />
+            </svg>
+            taleswrap
+          </a>
+          <a
+            href="https://www.youtube.com/@taleswrap"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-white transition hover:border-[#4D6CFA] hover:bg-[#4D6CFA] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4D6CFA]"
+          >
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="mr-2 h-4 w-4">
+              <path d="M21.6 7.2a2.8 2.8 0 0 0-2-2C17.8 4.7 12 4.7 12 4.7s-5.8 0-7.6.5a2.8 2.8 0 0 0-2 2C1.9 9 1.9 12 1.9 12s0 3 .5 4.8a2.8 2.8 0 0 0 2 2c1.8.5 7.6.5 7.6.5s5.8 0 7.6-.5a2.8 2.8 0 0 0 2-2c.5-1.8.5-4.8.5-4.8s0-3-.5-4.8ZM10 15.2V8.8l5.5 3.2L10 15.2Z" />
+            </svg>
+            taleswrap
+          </a>
+        </div>
       </div>
 
       {activeVideo && (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import heroVideo from "../assets/hero.mp4";
-import mobileBanner from "../assets/galPhotosOptimized/image.png";
+import mobileBanner from "../assets/galPhotosOptimized/image.jpg";
 
 function MailIcon() {
   return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3 7 9 6 9-6" /></svg>;
@@ -26,7 +26,7 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen bg-black overflow-hidden">
 
       <div className="pointer-events-none absolute left-1/2 top-[5.5rem] z-10 h-32 w-[calc(100%-3rem)] max-w-sm -translate-x-1/2 overflow-hidden rounded-2xl border border-white/20 md:hidden">
-        <img src={mobileBanner} alt="" className="h-full w-full object-cover object-center" />
+        <img src={mobileBanner} alt="" loading="eager" fetchPriority="high" decoding="async" className="h-full w-full object-cover object-center" />
         {skillsVisible && (
           <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/25 px-5 text-center text-white animate-[fade-in_450ms_ease-out_both]">
             <p className="instrument-serif text-2xl leading-none tracking-wide">Welcome to my World</p>

@@ -1,6 +1,5 @@
 const links = [
   ["Home", "#home"],
-  ["About me", "#about"],
   ["Tales", "#tales"],
   ["Gallery", "#gallery"],
   ["Poem Desk", "#poem-desk"],
