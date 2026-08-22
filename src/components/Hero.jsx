@@ -25,8 +25,14 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen bg-black overflow-hidden">
 
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-[5.5rem] z-10 h-32 w-[calc(100%-3rem)] max-w-sm -translate-x-1/2 overflow-hidden rounded-2xl border border-white/20 md:hidden">
+      <div className="pointer-events-none absolute left-1/2 top-[5.5rem] z-10 h-32 w-[calc(100%-3rem)] max-w-sm -translate-x-1/2 overflow-hidden rounded-2xl border border-white/20 md:hidden">
         <img src={mobileBanner} alt="" className="h-full w-full object-cover object-center" />
+        {skillsVisible && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/25 px-5 text-center text-white animate-[fade-in_450ms_ease-out_both]">
+            <p className="instrument-serif text-2xl leading-none tracking-wide">Welcome to my World</p>
+            <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/90">Take a look at my work</p>
+          </div>
+        )}
       </div>
 
       <div className="mx-auto flex h-screen max-w-7xl flex-col items-center px-6 lg:flex-row lg:px-12">
