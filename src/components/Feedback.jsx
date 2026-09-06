@@ -5,7 +5,7 @@ export default function Feedback() {
   const [type, setType] = useState("Query");
 
   return (
-    <section className="bg-[#111111] px-6 py-20 text-white sm:py-24 lg:px-12 lg:py-28">
+    <section id="contact" className="bg-[#111111] px-6 py-20 text-white sm:py-24 lg:px-12 lg:py-28">
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-center lg:gap-24">
         <form action="https://formsubmit.co/bonguashish532222@gmail.com" method="POST" className="relative isolate order-2 overflow-hidden rounded-2xl bg-black p-6 text-neutral-300 shadow-2xl shadow-black/40 sm:p-8 lg:order-1">
           <img src={feedbackBackground} alt="" aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 h-full w-full scale-110 object-cover object-right-bottom opacity-20 animate-[form-background-drift_18s_ease-in-out_infinite_alternate]" />

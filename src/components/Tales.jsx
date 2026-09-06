@@ -1,12 +1,17 @@
 import { useState } from "react";
-import taleThumbnail from "../assets/Black White and Red Typographic Truth YouTube Thumbnail.png";
 
 const videos = [
   {
     title: "Conversation with Mathew Bentley",
     duration: "21:27",
-    image: taleThumbnail,
+    image: "https://img.youtube.com/vi/K3jil977xZg/maxresdefault.jpg",
     youtubeId: "K3jil977xZg",
+  },
+  {
+    title: "New Tale",
+    duration: "—",
+    image: "https://img.youtube.com/vi/hkcqDKr0vo8/maxresdefault.jpg",
+    youtubeId: "hkcqDKr0vo8",
   },
 ];
 
