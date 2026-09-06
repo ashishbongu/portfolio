@@ -13,21 +13,6 @@ const photos = Object.entries(photoModules)
   )
   .map(([, src], index) => ({ src, alt: `Gallery photograph ${index + 1}` }));
 
-const designModules = import.meta.glob(
-  "../assets/designs/*.{png,jpg,jpeg,webp,avif}",
-  {
-    eager: true,
-    import: "default",
-    query: "?url",
-  },
-);
-
-const designs = Object.entries(designModules)
-  .sort(([firstPath], [secondPath]) =>
-    firstPath.localeCompare(secondPath, undefined, { numeric: true }),
-  )
-  .map(([, src], index) => ({ src, alt: `Design ${index + 1}` }));
-
 export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-[#050505] px-6 pb-24 pt-32 lg:px-12 lg:pb-32 lg:pt-40">
@@ -76,21 +61,6 @@ export default function GalleryPage() {
             snaparos
           </a>
         </div>
-
-        {designs.length > 0 && (
-          <section className="mt-24">
-            <h3 className="text-center text-sm font-semibold uppercase tracking-[0.28em] text-[#4D6CFA]">
-              My designs
-            </h3>
-            <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
-              {designs.map((design) => (
-                <figure key={design.src} className="overflow-hidden bg-neutral-900">
-                  <img src={design.src} alt={design.alt} loading="lazy" decoding="async" className="block h-auto w-full" />
-                </figure>
-              ))}
-            </div>
-          </section>
-        )}
       </div>
     </main>
   );

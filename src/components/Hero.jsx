@@ -68,12 +68,19 @@ export default function Hero() {
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm lg:justify-start">
               <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow me on</span>
 
-              <a href="https://www.instagram.com/taleswrap/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
-                @taleswrap
+              <a href="https://www.instagram.com/taleswrap/" target="_blank" rel="noreferrer" aria-label="Instagram: taleswrap" className="inline-flex items-center gap-1.5 font-medium text-white transition hover:text-[#4D6CFA]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" strokeWidth="2.5" strokeLinecap="round" /></svg>
+                taleswrap
               </a>
               <span className="text-neutral-600">/</span>
-              <a href="https://www.instagram.com/snaparos/" target="_blank" rel="noreferrer" className="font-medium text-white transition hover:text-[#4D6CFA]">
-                @snaparos
+              <a href="https://www.instagram.com/snaparos/" target="_blank" rel="noreferrer" aria-label="Instagram: snaparos" className="inline-flex items-center gap-1.5 font-medium text-white transition hover:text-[#4D6CFA]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" strokeWidth="2.5" strokeLinecap="round" /></svg>
+                snaparos
+              </a>
+              <span className="text-neutral-600">/</span>
+              <a href="https://www.youtube.com/@taleswrap" target="_blank" rel="noreferrer" aria-label="YouTube: taleswrap" className="inline-flex items-center gap-1.5 font-medium text-white transition hover:text-[#4D6CFA]">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8ZM9.6 15.8V8.2l6.4 3.8-6.4 3.8Z" /></svg>
+                taleswrap
               </a>
 
             </div>

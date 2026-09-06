@@ -8,8 +8,8 @@ const videos = [
     youtubeId: "K3jil977xZg",
   },
   {
-    title: "New Tale",
-    duration: "—",
+    title: "Conversation with Anjali Kothari",
+    duration: "35:55",
     image: "https://img.youtube.com/vi/hkcqDKr0vo8/maxresdefault.jpg",
     youtubeId: "hkcqDKr0vo8",
   },

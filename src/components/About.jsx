@@ -1,34 +1,4 @@
-import { useRef, useState } from "react";
-import portfolioVideo from "../assets/INTRO.mp4";
-
 export default function About() {
-    const videoRef = useRef(null);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [progress, setProgress] = useState(0);
-
-    const togglePlayback = () => {
-      if (!videoRef.current) return;
-
-      if (videoRef.current.paused) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    };
-
-    const updateProgress = () => {
-      const { currentTime, duration } = videoRef.current;
-      setProgress(duration ? (currentTime / duration) * 100 : 0);
-    };
-
-    const seekVideo = (event) => {
-      if (!videoRef.current?.duration) return;
-
-      const nextProgress = Number(event.target.value);
-      videoRef.current.currentTime = (nextProgress / 100) * videoRef.current.duration;
-      setProgress(nextProgress);
-    };
-
     return (
       <section
         id="about"
@@ -61,43 +31,10 @@ export default function About() {
           </div>
 
           <div className="relative w-full max-w-md justify-self-center lg:max-w-[280px] lg:translate-y-8">
-            <div className="relative overflow-hidden rounded-2xl bg-black shadow-2xl">
-              <video
-                ref={videoRef}
-                playsInline
-                preload="metadata"
-                className="aspect-[9/16] h-full w-full object-cover"
-                aria-label="Portfolio video"
-                onPlay={() => setIsPlaying(true)}
-                onPause={() => setIsPlaying(false)}
-                onEnded={() => setIsPlaying(false)}
-                onTimeUpdate={updateProgress}
-              >
-                <source src={portfolioVideo} type="video/mp4" />
-              </video>
-
-              <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 bg-gradient-to-t from-black/85 to-transparent px-4 pb-4 pt-10">
-                <button
-                  type="button"
-                  onClick={togglePlayback}
-                  className="flex shrink-0 items-center justify-center text-base leading-none text-white transition-opacity hover:opacity-70 focus:outline-none"
-                  aria-label={isPlaying ? "Pause introduction video" : "Play introduction video"}
-                >
-                  {isPlaying ? "\u275a\u275a" : "\u25b6"}
-                </button>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  step="0.1"
-                  value={progress}
-                  onChange={seekVideo}
-                  aria-label="Video timeline"
-                  className="h-1.5 w-full cursor-pointer appearance-none rounded-full accent-white"
-                  style={{ background: `linear-gradient(to right, #ffffff ${progress}%, rgba(255, 255, 255, 0.35) ${progress}%)` }}
-                />
-              </div>
-            </div>
+            <div
+              aria-hidden="true"
+              className="aspect-[9/16] w-full rounded-2xl bg-black shadow-2xl"
+            />
           </div>
         </div>
       </section>
