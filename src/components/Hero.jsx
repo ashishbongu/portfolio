@@ -66,7 +66,7 @@ export default function Hero() {
 
           <div className="mt-3 flex flex-col items-center gap-3 lg:items-start">
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm lg:justify-start">
-              <span className="font-medium uppercase tracking-[0.18em] text-neutral-500">Follow me on</span>
+              <span className="basis-full text-center font-medium uppercase tracking-[0.18em] text-neutral-500 lg:basis-auto">Follow me on</span>
 
               <a href="https://www.instagram.com/taleswrap/" target="_blank" rel="noreferrer" aria-label="Instagram: taleswrap" className="inline-flex items-center gap-1.5 font-medium text-white transition hover:text-[#4D6CFA]">
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-4 w-4"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" strokeWidth="2.5" strokeLinecap="round" /></svg>
