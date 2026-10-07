@@ -3,15 +3,24 @@ import { useState } from "react";
 const videos = [
   {
     title: "Conversation with Mathew Bentley",
+    description: "Photographs are our memories with this world, and no one can explain that better than a passionate photographer.",
     duration: "21:27",
     image: "https://img.youtube.com/vi/K3jil977xZg/maxresdefault.jpg",
     youtubeId: "K3jil977xZg",
   },
   {
     title: "Conversation with Anjali Kothari",
+    description: "A beautiful and insightful conversation that taught me how to overcome fear and embarresment while speaking ",
     duration: "35:55",
     image: "https://img.youtube.com/vi/hkcqDKr0vo8/maxresdefault.jpg",
     youtubeId: "hkcqDKr0vo8",
+  },
+  {
+    title: "Conversation with Taivo",
+    description: "This conversation made me realize how beautiful it is to capture peoples' happy moments and cherish their day",
+    duration: "15:26",
+    image: "https://img.youtube.com/vi/syuimNB6s84/maxresdefault.jpg",
+    youtubeId: "syuimNB6s84",
   },
 ];
 
@@ -33,31 +42,35 @@ export default function Tales() {
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {videos.map((video) => (
-            <article key={video.title} className="group">
+            <article key={video.youtubeId} className="group overflow-hidden border border-white/15 bg-neutral-950 transition-colors duration-300 hover:border-white/35">
               <div className="relative aspect-video overflow-hidden bg-neutral-900">
                 <img
                   src={video.image}
                   alt=""
-                  className="h-full w-full object-cover opacity-75 transition duration-500 group-hover:scale-105 group-hover:opacity-95"
+                  className="h-full w-full object-cover opacity-100 transition duration-500 group-hover:grayscale"
                 />
                 <button
                   type="button"
                   aria-label={video.youtubeId ? `Play ${video.title}` : undefined}
                   onClick={() => video.youtubeId && setActiveVideo(video.youtubeId)}
-                  className="absolute inset-0 grid place-items-center"
+                  className="absolute inset-0 grid cursor-pointer place-items-center"
                 >
-                  <span className="grid h-12 w-12 place-items-center rounded-full border border-white/70 bg-black/35 pl-0.5 text-sm text-white backdrop-blur-sm transition group-hover:bg-white group-hover:text-black">
+                  <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/80 bg-transparent text-[0px] font-medium text-white opacity-0 shadow-lg backdrop-blur-[2px] transition duration-200 group-hover:scale-105 group-hover:opacity-100 group-hover:border-black group-hover:bg-black group-hover:text-white focus:opacity-100">
                     ▶
+                    <span className="pl-0.5 text-sm" aria-hidden="true">&#9654;</span>
                   </span>
                 </button>
                 <span className="absolute bottom-3 right-3 rounded bg-black/80 px-2 py-1 text-xs text-white">
                   {video.duration}
                 </span>
               </div>
-              <h3 className="mt-4 text-lg font-medium text-white">{video.title}</h3>
+              <div className="p-5">
+                <h3 className="text-lg font-medium text-white">{video.title}</h3>
+                <p className="mt-2 text-sm leading-5 text-neutral-400">{video.description}</p>
+              </div>
             </article>
           ))}
-          <article className="flex min-h-56 flex-col justify-end border border-dashed border-white/20 p-6 sm:p-7 md:col-span-2">
+          <article className="flex min-h-56 flex-col justify-end border border-dashed border-white/20 p-6 sm:p-7 md:col-span-3">
             <h3 className="instrument-serif mt-4 text-4xl leading-none text-white sm:text-[2.75rem]">More on the way.</h3>
             <p className="mt-4 max-w-sm text-sm leading-6 text-neutral-400">
               New conversations, lessons, and stories.
